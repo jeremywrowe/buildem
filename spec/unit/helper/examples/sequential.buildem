@@ -1,0 +1,3 @@
+run "initialize.sh"
+run "clean.sh"
+run "do_something_at_the_end.sh"

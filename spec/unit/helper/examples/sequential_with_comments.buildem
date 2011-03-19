@@ -1,0 +1,9 @@
+configuration.output_file "my_output.file"
+configuration.workers 2
+configuration.error_file "errorz"
+
+# don't do this!
+
+run "initialize.sh"
+run "clean.sh"
+run "do_something_at_the_end.sh"
