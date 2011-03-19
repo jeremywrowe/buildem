@@ -20,6 +20,10 @@ describe BuildEm::Runner, "start" do
   
   describe "execution flow" do
     
+    before do
+      
+    end
+    
   end
   
   private
