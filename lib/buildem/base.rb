@@ -1,4 +1,2 @@
-
-class BuildEm
-  
-end
+require 'rubygems'
+require "buildem"

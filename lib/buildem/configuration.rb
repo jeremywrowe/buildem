@@ -1,4 +1,3 @@
-require "buildem/base"  
 # configuration.workers 2
 # configuration.output_file "output.out"
 # configuration.error_file "errors.out"

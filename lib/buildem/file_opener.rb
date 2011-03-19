@@ -1,6 +1,4 @@
 
-module BuildEm
-  class FileReader
-    
-  end 
+class BuildEm::FileOpener
+  
 end
