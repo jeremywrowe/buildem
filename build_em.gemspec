@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Jeremy W. Rowe"]
   s.email       = ["jeremy.w.rowe@gmail.com"]
   s.homepage    = "http://github.com"
-  s.summary     = %q{}
+  s.summary     = %q{A simple build script wrapper that allows for concurent tasks}
   s.add_dependency('process_pool', '>= 0.1.3')
   s.add_development_dependency('rspec')
 
