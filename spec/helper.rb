@@ -9,9 +9,9 @@ module Helper
   
   def self.require_files filename
     filename.each do |file|
-      require "#{$here}/../lib/build_em/#{file}"
+      require "#{$here}/../lib/buildem/#{file}"
     end if filename.class == Array
-    require "#{$here}/../lib/build_em/#{filename}" if filename.class == String
+    require "#{$here}/../lib/buildem/#{filename}" if filename.class == String
   end
   
 end

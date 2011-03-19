@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 # -*- mode: ruby -*-
 
-require 'build_em/runner'
+require 'rubygems'
+require 'buildem/runner'
 BuildEm::Runner.start

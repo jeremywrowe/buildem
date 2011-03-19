@@ -1,3 +1,4 @@
+require "base"
 
 class BuildEm::Single::Executor
   def self.execute(filename, optz = {})
