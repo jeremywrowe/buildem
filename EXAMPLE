@@ -1,4 +1,4 @@
-configuration.workers 2
+$configuration.workers = 2
 
 run "initialize.sh"
 run "clean.sh"
