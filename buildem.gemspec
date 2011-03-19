@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Jeremy W. Rowe"]
   s.email       = ["jeremy.w.rowe@gmail.com"]
-  s.homepage    = "http://github.com"
+  s.homepage    = "http://github.com/jeremywrowe/buildem"
   s.summary     = %q{A simple build script wrapper that allows for concurent tasks}
   s.add_dependency('process_pool', '>= 0.1.3')
   s.add_development_dependency('rspec')
