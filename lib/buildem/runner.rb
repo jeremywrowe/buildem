@@ -8,7 +8,7 @@ module Kernel
   def unorderd
     puts "Started unordered sequence"
     yield
-    $pool = ProcessPool.new($configuration.workers,SimpleQueue.create,nil)
+    $pool = ProcessPool.new($configuration.workers)
     puts $configuration.workers
     $jobs.each do |command|
       $pool.schedule(command,command.argz)

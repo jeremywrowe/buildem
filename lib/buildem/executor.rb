@@ -2,7 +2,7 @@ require "buildem/base"
 
 class BuildEm::Executor
   
-  attar_accessor :argz
+  attr_accessor :argz
   
   def initialize(args)
     @argz ||= args
@@ -13,17 +13,19 @@ class BuildEm::Executor
   end
   
   def run
-    puts "running --v"
-    @argz.each_with_index do |a,i|
-      puts "\t\targz[#{i}] = #{a}"
-    end
+    # queued_run "publish.sh", :output => "publish_output.out", :errors => "publish_errors.out"
     begin
-      start = Time.now
-      sleep 2
-      puts Time.now - start
+      `#{argz[0]} #{redirect_standard_err_and_out}`
     rescue Exception => e
       puts e
     end
   end
+  
+  private
+  
+  def redirect_standard_err_and_out
+    ""
+  end
+  
   
 end
