@@ -6,11 +6,15 @@ Build'em is still very young :) so be careful using it.  Input is always welcome
 
 Features:
 	
+	Execution:
+		Scripts go in a plain text file, I use my_very_important_task.buildem
+		and then simply call buildem my_very_important_task.buildem
+	
 	1) Build'em supports sequential tasks (tasks that go in order)
 	
 		Example:
-			run "task.sh"
-			run "another.sh" #another.sh waits for task.sh to complete
+			run "./task.sh"
+			run "./another.sh" #another.sh waits for task.sh to complete
 
 	2) Build'em supports a work queue, what does this mean?
 	   This means that you can run tasks concurrently, easily.
@@ -18,9 +22,9 @@ Features:
 		Example:
 	
 		unorderd do
-			queued_run "some_task.sh"
-			queued_run "some_task1.sh"  # All of these items will be executed at the same time
-			queued_run "some_task2.sh"
+			queued_run "./some_task.sh"
+			queued_run "./some_task1.sh"  # All of these items will be executed at the same time
+			queued_run "./some_task2.sh"
 		end 
 	   
 	

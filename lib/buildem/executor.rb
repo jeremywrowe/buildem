@@ -15,7 +15,7 @@ class BuildEm::Executor
   def run
     # queued_run "publish.sh", :output => "publish_output.out", :errors => "publish_errors.out"
     begin
-      `#{argz[0]} #{redirect_standard_err_and_out}`
+      puts `#{argz[0]} #{redirect_standard_err_and_out}`
     rescue Exception => e
       puts e
     end
