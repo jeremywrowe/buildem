@@ -7,8 +7,8 @@ require_files "configuration"
 
 describe BuildEm::Configuration, "workers" do
   
-  it "has a default worker of 1" do
-    BuildEm::Configuration.new.workers.should eq 1
+  it "has a default worker of 2" do
+    BuildEm::Configuration.new.workers.should eq 2
   end
   
   it "sets workers through initilization" do

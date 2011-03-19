@@ -1,22 +1,20 @@
-configuration.output_file "my_output.file"
-configuration.workers 2
-configuration.error_file "errorz"
+$configuration.output_file = "my_output.file"
+$configuration.workers = 2
+$configuration.error_file = "errorz"
 
 # don't do this!
 
-unorderd do
-  run "build.sh"
-  run "checkin.sh"
-  run "publish.sh", :output => "publish_output.out", :errors => "publish_errors.out"
-end
-
-
 run "initialize.sh"
 run "clean.sh"
-run "do_something_at_the_end.sh"
+
 
 unorderd do
-  run "build.sh"
-  run "checkin.sh"
-  run "publish.sh", :output => "publish_output.out", :errors => "publish_errors.out"
+  queued_run "build.sh"
+  queued_run "checkin.sh"
+  queued_run "publish.sh", :output => "publish_output.out", :errors => "publish_errors.out", :args => ["1", 2, "3"]
 end
+
+puts "waiting for things to stop"
+
+run "do_something_at_the_end.sh"
+

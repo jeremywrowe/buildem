@@ -7,10 +7,10 @@ class BuildEm::Configuration
   attr_accessor :workers, :output_file, :error_file, :run_output
   
   def initialize(optz={})
-    @workers ||= (optz[:workers] || 1)
+    @workers     ||= (optz[:workers]     || 2)
     @output_file ||= (optz[:output_file] || "output.out")
-    @error_file ||= (optz[:error_file] || "error.out")
-    @run_output ||= optz[:run_output]
+    @error_file  ||= (optz[:error_file]  || "error.out")
+    @run_output  ||= optz[:run_output]
   end
   
 end

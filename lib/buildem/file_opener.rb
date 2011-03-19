@@ -1,4 +1,0 @@
-
-class BuildEm::FileOpener
-  
-end

@@ -1,6 +1,6 @@
-configuration.output_file "my_output.file"
-configuration.workers 2
-configuration.error_file "errorz"
+@configuration.output_file "my_output.file"
+@configuration.workers 2
+@configuration.error_file "errorz"
 
 # don't do this!
 
