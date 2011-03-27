@@ -19,6 +19,17 @@ def within path
 end
 
 RSpec.configure do |config|
+  
+  def expecting_exception(clazz)
+    begin
+      yield
+    rescue Exception => e
+      e.class.should == clazz
+      return
+    end
+    fail "Did not throw an exception like intended"
+  end
+  
   def capture(stream)
     begin
       stream = stream.to_s
