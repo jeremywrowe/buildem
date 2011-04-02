@@ -1,0 +1,13 @@
+require 'autotest/growl'
+require 'autotest/fsevent'
+
+Autotest.add_hook(:initialize) {|at|
+  at.add_exception %r{^\.git}  
+  at.add_exception %r{^./tmp}  
+  at.clear_mappings         
+  at.add_mapping(%r{^lib/buildem/.*\.rb$}) {|f, _|
+    item = f.split("/").last.gsub(".rb","")
+    Dir["spec/unit/#{item}_spec.rb"]
+  }
+  nil
+}

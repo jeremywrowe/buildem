@@ -15,10 +15,10 @@ module Kernel
     end
     $pool.start
     $pool.shutdown
+    puts "Finished #{$jobs.size} unordered jobs"
   end
   
   def queued_run(command, optz = {})
-    optz = {:foo => "bar", :moo => "cow"}
     $jobs << BuildEm::Executor.new([command,optz])
   end
   
@@ -31,10 +31,13 @@ class BuildEm::Runner
   $jobs = []
   def self.start
     if ARGV.size == 1
-      puts "running #{ARGV[0]}"
-      $configuration = BuildEm::Configuration.new
-      load ARGV[0]
-      puts "finished #{ARGV[0]}"
+      begin
+        puts "running #{ARGV[0]}"
+        $configuration = BuildEm::Configuration.new
+        load ARGV[0]
+      ensure
+        puts "finished #{ARGV[0]}"
+      end
     else
       puts usage
     end

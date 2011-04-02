@@ -5,6 +5,8 @@ require 'rspec'
 
 $SPEC_ROOT = File.expand_path(File.dirname(__FILE__))
 
+require "bundler/setup"
+
 def require_files filename
   filename.each do |file|
     require "#{$SPEC_ROOT}/../lib/buildem/#{file}"
@@ -24,8 +26,17 @@ RSpec.configure do |config|
     begin
       yield
     rescue Exception => e
-      e.class.should == clazz
-      return
+      case clazz
+      when String
+        e.message.should == clazz
+        return
+      when Regexp
+        e.message.should =~ clazz
+        return
+      else
+        e.class.should   == clazz
+        return
+      end
     end
     fail "Did not throw an exception like intended"
   end
