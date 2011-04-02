@@ -5,7 +5,7 @@ require 'buildem/executor'
 require 'process_pool'
 
 module Kernel
-  def unorderd
+  def unordered
     puts "Started unordered sequence"
     yield
     $pool = ProcessPool.new($configuration.workers)

@@ -8,13 +8,13 @@ run "initialize.sh"
 run "clean.sh"
 
 
-unorderd do
+unordered do
   queued_run "build.sh"
   queued_run "checkin.sh"
   queued_run "publish.sh", :output => "publish_output.out", :errors => "publish_errors.out", :args => ["1", 2, "3"]
 end
 
-puts "waiting for things to stop"
+unordered "waiting for things to stop"
 
 run "do_something_at_the_end.sh"
 

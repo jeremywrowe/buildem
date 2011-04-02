@@ -23,22 +23,22 @@ This means that you can run tasks concurrently, easily.
 
 Example:
 
-	unorderd do
+	unordered do
 		queued_run "./some_task.sh"
 		queued_run "./some_task1.sh"  # All of these items will be executed at the same time
 		queued_run "./some_task2.sh"
 	end
    
-*IMPORTANT*  All queued\_run tasks must be inside of an unorderd block if you want them to run at the same time. If you use run for a task, it will block to complete.
-That being said you can inject ordered tasks in the middle of unorderd tasks by using run instead of using qeueued_run if you wish to.
+*IMPORTANT*  All queued\_run tasks must be inside of an unordered block if you want them to run at the same time. If you use run for a task, it will block to complete.
+That being said you can inject ordered tasks in the middle of unordered tasks by using run instead of using qeueued_run if you wish to.
 
 * Configuration
-To set the worker amount for unorderd tasks before the unorderd block do $configuration.workers = 10 to get 10 nano-bots working for you.
+To set the worker amount for unordered tasks before the unordered block do $configuration.workers = 10 to get 10 nano-bots working for you.
 
 Example:
 
 	$configuration.workers = 5
-	unorderd do
+	unordered do
 		....
 	end
 	

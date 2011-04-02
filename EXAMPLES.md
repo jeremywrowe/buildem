@@ -6,7 +6,7 @@ Worker configuration, and unordered tasks
 	run "initialize.sh"
 	run "clean.sh"
 	
-	unorderd do
+	unordered do
 	  queued_run "job1.sh"
 	  queued_run "job2.sh"
 	  queued_run "job3.sh"

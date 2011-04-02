@@ -2,7 +2,7 @@ $configuration.output_file = "my_output.file"
 $configuration.workers = 10
 $configuration.error_file = "errorz"
 
-unorderd do
+unordered do
   queued_run "build.sh"
   queued_run "checkin.sh"
   queued_run "publish.sh", :output => "publish_output.out", :errors => "publish_errors.out"
