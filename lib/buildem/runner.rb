@@ -1,3 +1,4 @@
+require 'logger'
 require "buildem"
 require 'buildem/base'
 require 'buildem/configuration'
@@ -28,8 +29,28 @@ module Kernel
 end
 
 class BuildEm::Runner
+  
   $jobs = []
-  def self.start
+  
+  def initialize(kernel = Kernel, argv = ARGV)
+    @kernel = kernel
+    @argv   = argv
+  end
+  
+  def process_standard_in
+    if @argv.empty?
+      output = []
+      while input = @kernel.gets and not input == "start\n"
+        output << input
+      end 
+      unless output.empty?
+        output = output.join("\n")
+        @kernel.eval(output)
+      end
+    end
+  end
+  
+  def start
     if ARGV.size == 1
       begin
         puts "running #{ARGV[0]}"
@@ -45,7 +66,7 @@ class BuildEm::Runner
   
   private
   
-    def self.usage
+    def usage
 <<-USAGE
 
 -----------------------------------------------------------------

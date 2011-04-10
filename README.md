@@ -2,7 +2,6 @@ Build'em quick, Build'em right
 ==============================
 
 Build'em is a small little script parser that is intended for large build systems.
-Build'em is still very young :) so be careful using it.  Input is always welcome and if there is a feature that you just half to have i'd probably do it.
 
 
 Features:
@@ -44,11 +43,35 @@ Example:
 	
 This will give you 5 nano-bots for your unordered tasks
 
-
 optional run and queued_run options
 --------------------------
 * :retry\_amount    (Integer that specifies that you want to retry the execution of the provided command. Default is 1 execution.)
 * :retry\_condition (Integer, regular expression, or string that specifies what a good execution is. Default is 0 if not specified.)
 * :quit\_on\_error  (Boolean that specifies if build'em should quit when an exception happens executing the provided command. Default is true)
 
+**Notice** If the retry\_condition is not met within the retry\_amount interval an error will be throw unless :quit\_on\_error is set to false
 
+Logging
+-------
+If you wish to log all of the output to a specific file you can do so with an output\_to block
+
+Example:
+
+	output_to "my_nifty_output_file.txt" do
+		run "./task.sh"
+		run "./another.sh"
+		unordered do
+			queued_run "./some_task.sh"
+			queued_run "./some_task1.sh"
+			queued_run "./some_task2.sh"
+		end
+	end
+	
+* output\_to parameters
+
+filename: The filename that you wish to output to (optional, default is output.log)
+IO capture: possible values :stdout, :stderr etc (optional, default is :stdout)
+	
+	output_to do ... will save all stdout output to output.log
+	output_to "another_file.txt" do ... same as above but would be saved to another_file.txt
+	output_to "err.txt", :stderr do ... will output all stderr to err

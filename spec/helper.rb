@@ -1,11 +1,13 @@
+require "bundler/setup"
 require 'fileutils'
 include FileUtils
 require 'buildem'
+
 require 'rspec'
+require 'test/unit'
+require 'flexmock/test_unit'
 
 $SPEC_ROOT = File.expand_path(File.dirname(__FILE__))
-
-require "bundler/setup"
 
 def require_files filename
   filename.each do |file|
@@ -21,6 +23,8 @@ def within path
 end
 
 RSpec.configure do |config|
+  
+  config.mock_with :flexmock
   
   def expecting_exception(clazz)
     begin

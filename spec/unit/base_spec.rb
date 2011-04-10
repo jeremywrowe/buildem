@@ -28,3 +28,21 @@ describe "base" do
   end
   
 end
+
+describe Kernel, "exitstatus" do
+  
+  it "can get the exit status of the last ran application" do
+    capture(:stdout) { `pwd` }
+    Kernel.exitstatus.should == 0
+  end
+  
+end
+
+describe Kernel, "run_command" do
+  
+  it "can run a command" do
+    flexmock(Kernel) {|k| k.should_receive("`").with("awesome command").and_return("foo man shoe").once}
+    Kernel.run_command("awesome command").should == "foo man shoe"
+  end
+  
+end

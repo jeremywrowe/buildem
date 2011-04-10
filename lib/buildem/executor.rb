@@ -17,7 +17,7 @@ class BuildEm::Executor
   
   def run
     optz = argz[1]
-    quit_on_error = (optz[:quit_on_error].nil?  ? true : optz[:quit_on_error])
+    quit_on_error = (optz[:quit_on_error].nil?   ? true : optz[:quit_on_error])
     retry_amount  = (optz[:retry_amount].nil?    ? 1 : optz[:retry_amount])
     condition     = (optz[:retry_condition].nil? ? 0 : optz[:retry_condition])
     executions    = 0
@@ -32,18 +32,10 @@ class BuildEm::Executor
     rescue Exception => e
       if quit_on_error
         raise e
-      else
-        #put to output log or specified log
       end
     end while executions < retry_amount
+    fail "Failed to execute [#{argz[0]}]. Tried #{retry_amount} time(s), expected match was [#{condition}] got [#{@command_exitstatus}]." if quit_on_error
     @command_exitstatus
   end
-  
-  private
-  
-  def redirect_standard_error_and_out
-    ""
-  end
-  
-  
+    
 end
