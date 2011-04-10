@@ -1,9 +1,9 @@
-require 'logger'
 require "buildem"
 require 'buildem/base'
 require 'buildem/configuration'
 require 'buildem/executor'
 require 'process_pool'
+require 'buildem/logger'
 
 module Kernel
   def unordered
