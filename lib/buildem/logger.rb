@@ -1,3 +1,4 @@
+require 'stringio'
 module Kernel
   
   def output_to(filename="output.log", stream=:stdout)
