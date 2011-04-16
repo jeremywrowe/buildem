@@ -1,13 +1,15 @@
-source "http://rubygems.org"
+require 'spec/platforms.rb'
 
-# Specify your gem's dependencies in buildem.gemspec
+source "http://rubygems.org"
 gemspec
 
 group :test do
 	gem "rspec"
 	gem "autotest"
-	gem "autotest-growl"
-	gem "autotest-fsevent"
+	osx do
+	  gem "autotest-growl"
+	  gem "autotest-fsevent"
+        end
 	gem "flexmock"
 	gem "rcov"
 end
