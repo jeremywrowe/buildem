@@ -3,6 +3,8 @@ Build'em quick, Build'em right
 
 Build'em is a small little script parser that is intended for large build systems.
 
+[![Build Status](https://secure.travis-ci.org/jeremywrowe/buildem.png)](http://travis-ci.org/jeremywrowe/buildem)
+
 
 Features:
 ---------
