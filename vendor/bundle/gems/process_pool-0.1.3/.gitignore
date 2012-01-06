@@ -1,0 +1,6 @@
+.idea/*
+vendor/*
+bin/*
+tmp/*
+scratch_directory/*
+pkg/*

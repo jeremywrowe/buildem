@@ -1,0 +1,783 @@
+
+doc/jamis.rb,43
+module RDocRDoc1,0
+module PagePage2,12
+
+install.rb,29
+def indir(newdir)indir7,68
+
+lib/flexmock/argument_matchers.rb,722
+class FlexMockFlexMock14,319
+  class AnyMatcherAnyMatcher17,426
+    def ===(target)===18,445
+    def inspectinspect21,484
+  class EqualMatcherEqualMatcher28,636
+    def initialize(obj)initialize29,657
+    def ===(target)===32,706
+    def inspectinspect35,755
+  class ProcMatcherProcMatcher44,966
+    def initialize(&block)initialize45,986
+    def ===(target)===48,1042
+    def inspectinspect51,1096
+  class HashMatcherHashMatcher58,1271
+    def initialize(hash)initialize59,1291
+    def ===(target)===62,1343
+    def inspectinspect65,1414
+  class DuckMatcherDuckMatcher72,1603
+    def initialize(methods)initialize73,1623
+    def ===(target)===76,1684
+    def inspectinspect79,1762
+
+lib/flexmock/argument_types.rb,228
+class FlexMockFlexMock14,331
+  module ArgumentTypesArgumentTypes21,624
+    def anyany23,707
+    def eq(obj)eq29,834
+    def on(&block)on36,1034
+    def hsh(hash)hsh42,1175
+    def ducktype(*methods)ducktype48,1352
+
+lib/flexmock/base.rb,0
+
+lib/flexmock/composite.rb,30
+class FlexMockFlexMock8,133
+
+lib/flexmock/core.rb,900
+class FlexMockFlexMock46,1270
+  def initialize(name="unknown", container=nil)initialize55,1540
+  def inspectinspect65,1834
+  def flexmock_verifyflexmock_verify71,1994
+  def flexmock_teardownflexmock_teardown82,2235
+  def should_ignore_missingshould_ignore_missing86,2315
+  def by_defaultby_default91,2427
+  def method_missing(sym, *args, &block)method_missing97,2556
+  def respond_to?(sym, *args)respond_to?114,3028
+  def flexmock_find_expectation(method_name, *args) # :nodoc:flexmock_find_expectation119,3184
+  def flexmock_expectations_for(method_name) # :nodoc:flexmock_expectations_for125,3389
+  def method(sym)method130,3548
+  def should_receive(*args)should_receive159,4587
+  def should_expectshould_expect182,5330
+  def flexmock_wrap(&block)flexmock_wrap190,5520
+  def override_existing_method(sym)override_existing_method204,6075
+  def sclasssclass213,6295
+
+lib/flexmock/core_class_methods.rb,289
+class FlexMockFlexMock15,352
+    def use(*names)use39,1293
+    def format_args(sym, args)  # :nodoc:format_args53,1691
+    def check(msg, &block)  # :nodoc:check63,1992
+  class UseContainerUseContainer70,2165
+    def initializeinitialize75,2247
+    def passed?passed?79,2304
+
+lib/flexmock/default_framework_adapter.rb,345
+class FlexMockFlexMock14,318
+  class DefaultFrameworkAdapterDefaultFrameworkAdapter15,333
+    def assert_block(msg, &block)assert_block16,365
+    def assert_equal(a, b, msg=nil)assert_equal22,478
+    class AssertionFailedError < StandardError; endAssertionFailedError26,578
+    def assertion_failed_errorassertion_failed_error27,630
+
+lib/flexmock/deprecated_methods.rb,340
+class ModuleModule13,295
+  def flexmock_deprecate(*method_names)flexmock_deprecate14,308
+class FlexMockFlexMock33,808
+  def mock_handle(sym, expected_count=nil, &block) # :nodoc:mock_handle40,1106
+  class PartialMockProxyPartialMockProxy47,1396
+    def any_instance(&block)any_instance53,1553
+  module OrderingOrdering59,1701
+
+lib/flexmock/errors.rb,137
+class FlexMockFlexMock14,319
+  class UsageError < ::RuntimeErrorUsageError17,387
+  class MockError < ::RuntimeErrorMockError20,430
+
+lib/flexmock/expectation.rb,2059
+class FlexMockFlexMock14,318
+  class ExpectationExpectation28,851
+    def initialize(mock, sym)initialize34,997
+    def to_sto_s49,1359
+    def verify_call(*args)verify_call55,1541
+    def _return_value(args) # :nodoc:_return_value64,1761
+    def return_value(args)return_value69,1901
+    def perform_yielding(args)perform_yielding83,2229
+    def eligible?eligible?99,2814
+    def call_count_constrained?call_count_constrained?104,2963
+    def validate_ordervalidate_order109,3067
+    def flexmock_verifyflexmock_verify121,3442
+    def match_args(args)match_args129,3639
+    def match_arg(expected, actual)match_arg138,3985
+    def with(*args)with145,4214
+    def with_no_argswith_no_args151,4348
+    def with_any_argswith_any_args157,4481
+    def and_return(*args, &block)and_return188,5490
+    def and_return_undefinedand_return_undefined212,6207
+    def and_yield(*yield_values)and_yield228,6776
+    def and_raise(exception, *args)and_raise252,7529
+    def and_throw(sym, value=nil)and_throw266,7894
+    def zero_or_more_timeszero_or_more_times272,8069
+    def times(limit)times279,8292
+    def nevernever288,8639
+    def onceonce295,8854
+    def twicetwice302,9069
+    def at_leastat_least314,9395
+    def at_mostat_most327,9774
+    def ordered(group_name=nil)ordered356,11043
+    def globallyglobally368,11423
+    def define_ordered(group_name, ordering)define_ordered374,11538
+    def by_defaultby_default388,12036
+  class CompositeExpectationCompositeExpectation399,12443
+    def initializeinitialize402,12517
+    def add(expectation)add407,12613
+    def method_missing(sym, *args, &block)method_missing412,12754
+    def order_numberorder_number423,13129
+    def mockmock428,13239
+    def should_receive(*args, &block)should_receive434,13403
+    def to_sto_s439,13549
+  class ExpectationRecorderExpectationRecorder453,14007
+    def initializeinitialize456,14067
+    def method_missing(sym, *args, &block)method_missing461,14178
+    def apply(mock)apply469,14450
+
+lib/flexmock/expectation_director.rb,483
+class FlexMockFlexMock15,344
+  class ExpectationDirectorExpectationDirector20,555
+    def initialize(sym)initialize23,639
+    def call(*args)call38,1187
+    def <<(expectation)<<46,1440
+    def find_expectation(*args) # :nodoc:find_expectation51,1564
+    def flexmock_verify         # :nodoc:flexmock_verify62,1938
+    def defaultify_expectation(exp) # :nodoc:defaultify_expectation69,2149
+    def find_expectation_in(expectations, *args)find_expectation_in81,2430
+
+lib/flexmock/mock_container.rb,944
+class FlexMockFlexMock16,380
+  module MockContainerMockContainer26,781
+    def flexmock_teardownflexmock_teardown31,965
+    def flexmock_verifyflexmock_verify40,1208
+    def flexmock_created_mocksflexmock_created_mocks49,1448
+    def flexmock_closeflexmock_close55,1668
+    def flexmock(*args)flexmock123,4876
+    def flexmock_remember(mocking_object)flexmock_remember165,6148
+  class MockContainerHelperMockContainerHelper181,6798
+    def next_idnext_id185,6907
+    def parse_should_args(mock, args, &block)  # :nodoc:parse_should_args198,7380
+    def add_model_methods(mock, model_class, id)add_model_methods216,7893
+    def make_partial_proxy(container, obj, name, safe_mode)make_partial_proxy245,9111
+    def build_demeter_chain(mock, arg, &block)build_demeter_chain291,11097
+    def check_proper_mock(mock, method_name)check_proper_mock316,11944
+    def check_method_names(names)check_method_names326,12348
+
+lib/flexmock/noop.rb,0
+
+lib/flexmock/ordering.rb,399
+class FlexMockFlexMock12,293
+  module OrderingOrdering20,665
+    def flexmock_allocate_orderflexmock_allocate_order23,732
+    def flexmock_groupsflexmock_groups29,895
+    def flexmock_current_orderflexmock_current_order34,1003
+    def flexmock_current_order=(value)flexmock_current_order=39,1126
+    def flexmock_validate_order(method_name, order_number)flexmock_validate_order43,1212
+
+lib/flexmock/partial_mock.rb,1375
+class FlexMockFlexMock14,318
+  class PartialMockProxyPartialMockProxy26,948
+    def initialize(obj, mock, safe_mode)initialize40,1285
+    def flexmock_getflexmock_get56,1685
+    def should_receive(*args)should_receive80,2625
+    def add_mock_method(method_name)add_mock_method91,2903
+    def new_instances(*allocators, &block)new_instances123,4119
+    def invoke_original(method, args)invoke_original144,4920
+    def flexmock_verifyflexmock_verify152,5214
+    def flexmock_teardownflexmock_teardown157,5350
+    def flexmock_containerflexmock_container169,5688
+    def flexmock_container=(container)flexmock_container=175,5883
+    def flexmock_expectations_for(method_name)flexmock_expectations_for179,5999
+    def sclasssclass186,6160
+    def singleton?(method_name)singleton?192,6301
+    def hide_existing_method(method_name)hide_existing_method202,6763
+    def stow_existing_definition(method_name)stow_existing_definition209,6980
+    def create_alias_for_existing_method(method_name)create_alias_for_existing_method229,7697
+    def define_proxy_method(method_name)define_proxy_method247,8216
+    def restore_original_definition(method_name)restore_original_definition268,8964
+    def remove_current_method(method_name)remove_current_method280,9328
+    def detached?detached?285,9489
+    def new_name(old_name)new_name290,9597
+
+lib/flexmock/rails/view_mocking.rb,665
+class FlexMockFlexMock3,20
+  module MockContainerMockContainer4,35
+    def rails_versionrails_version6,59
+    def should_render_view(template_name=nil)should_render_view25,684
+    def should_render_view_prior_version_124(template_name) # :nodoc:should_render_view_prior_version_12443,1310
+    def should_render_view_after_version_124(template_name)should_render_view_after_version_12464,2093
+    def should_render_view_after_version_202(template_name)should_render_view_after_version_20288,3015
+    def should_render_view_22x(template_name)should_render_view_22x109,3813
+    def should_render_view_23x(template_name)should_render_view_23x129,4575
+
+lib/flexmock/rails.rb,0
+
+lib/flexmock/recorder.rb,271
+class FlexMockFlexMock14,328
+  class RecorderRecorder20,504
+    def initialize(mock)initialize24,610
+    def should_be_strict(is_strict=true)should_be_strict48,1542
+    def strict?strict?53,1656
+    def method_missing(sym, *args, &block)method_missing59,1786
+
+lib/flexmock/rspec.rb,341
+class FlexMockFlexMock14,319
+  class RSpecFrameworkAdapterRSpecFrameworkAdapter21,416
+    def assert_block(msg, &block)assert_block22,446
+    def assert_equal(a, b, msg=nil)assert_equal26,548
+    class AssertionFailedError < StandardError; endAssertionFailedError31,711
+    def assertion_failed_errorassertion_failed_error32,763
+
+lib/flexmock/test_unit.rb,120
+module TestTest14,335
+  module UnitUnit15,347
+    class TestCaseTestCase16,361
+      def teardownteardown25,676
+
+lib/flexmock/test_unit_integration.rb,227
+class FlexMockFlexMock15,338
+  module TestCaseTestCase29,895
+    def teardownteardown35,1070
+  class TestUnitFrameworkAdapterTestUnitFrameworkAdapter45,1277
+    def assertion_failed_errorassertion_failed_error47,1345
+
+lib/flexmock/undefined.rb,288
+class FlexMockFlexMock12,293
+  class UndefinedUndefined17,464
+    def method_missing(sym, *args, &block)method_missing18,482
+    def to_sto_s22,545
+    def inspectinspect26,587
+    def cloneclone30,623
+    def coerce(other)coerce34,657
+  def self.undefinedundefined43,862
+
+lib/flexmock/validators.rb,545
+class FlexMockFlexMock14,318
+  class CountValidatorCountValidator19,454
+    def initialize(expectation, limit)initialize20,477
+    def eligible?(n)eligible?28,733
+  class ExactCountValidator < CountValidatorExactCountValidator36,898
+    def validate(n)validate39,1022
+  class AtLeastCountValidator < CountValidatorAtLeastCountValidator48,1313
+    def validate(n)validate51,1439
+    def eligible?(n)eligible?61,1856
+  class AtMostCountValidator < CountValidatorAtMostCountValidator69,2039
+    def validate(n)validate71,2154
+
+lib/flexmock.rb,0
+
+test/redirect_error.rb,114
+class FlexMockFlexMock3,20
+  module RedirectErrorRedirectError4,35
+    def redirect_errorredirect_error5,58
+
+test/rspec_integration/integration_spec.rb,0
+
+test/test_aliasing.rb,521
+class FlexMockFlexMock5,48
+  module StubsAndExpectsStubsAndExpects6,63
+    def expects(*args)expects7,88
+    def stubs(*args)stubs12,234
+  module MockContainerMockContainer17,298
+  class PartialMockProxyPartialMockProxy24,407
+class AliasingTest < Test::Unit::TestCaseAliasingTest30,510
+  def test_mockingtest_mocking33,582
+  def test_once_mockingtest_once_mocking39,741
+  def test_twice_mockingtest_twice_mocking43,837
+  def test_stubbingtest_stubbing48,1004
+  def test_partialtest_partial53,1127
+
+test/test_container_methods.rb,1111
+class TestFlexmockContainerMethods < Test::Unit::TestCaseTestFlexmockContainerMethods15,378
+  def test_simple_mock_creationtest_simple_mock_creation18,466
+  def test_mock_with_nametest_mock_with_name24,605
+  def test_mock_with_symbol_nametest_mock_with_symbol_name31,802
+  def test_mock_with_hashtest_mock_with_hash38,1005
+  def test_mock_with_name_and_hashtest_mock_with_name_and_hash44,1148
+  def test_mock_with_name_hash_and_blocktest_mock_with_name_hash_and_block53,1444
+  def test_basic_stubtest_basic_stub61,1665
+  def test_basic_stub_with_nametest_basic_stub_with_name68,1825
+  def test_stub_with_quick_definitionstest_stub_with_quick_definitions76,2075
+  def test_stub_with_name_quick_definitionstest_stub_with_name_quick_definitions82,2219
+  def test_stubs_are_auto_verifiedtest_stubs_are_auto_verified91,2531
+  def test_stubbing_a_stringtest_stubbing_a_string98,2721
+  def test_multiple_stubs_work_with_same_partial_mock_proxytest_multiple_stubs_work_with_same_partial_mock_proxy104,2846
+  def test_multiple_stubs_layer_behaviortest_multiple_stubs_layer_behavior111,3016
+
+test/test_default_framework_adapter.rb,473
+class TestFlexmockDefaultFrameworkAdapter < Test::Unit::TestCaseTestFlexmockDefaultFrameworkAdapter14,320
+  def setupsetup15,385
+  def test_assert_block_raises_exceptiontest_assert_block_raises_exception19,457
+  def test_assert_block_doesnt_raise_exceptiontest_assert_block_doesnt_raise_exception25,649
+  def test_assert_equal_doesnt_raise_exceptiontest_assert_equal_doesnt_raise_exception29,757
+  def test_assert_equal_can_failtest_assert_equal_can_fail33,861
+
+test/test_demeter_mocking.rb,1568
+class TestDemeterMocking < Test::Unit::TestCaseTestDemeterMocking5,48
+  def test_demeter_mockingtest_demeter_mocking8,126
+  def test_demeter_mocking_with_operatorstest_demeter_mocking_with_operators16,353
+  def test_demeter_mocking_with_multiple_operatorstest_demeter_mocking_with_multiple_operators25,642
+  def test_multiple_demeter_mocks_on_same_branch_is_oktest_multiple_demeter_mocks_on_same_branch_is_ok31,803
+  def test_multi_level_deep_demeter_violationtest_multi_level_deep_demeter_violation39,1095
+  def test_final_method_can_have_multiple_expecationstest_final_method_can_have_multiple_expecations45,1280
+  def test_conflicting_mock_declarations_raises_an_errortest_conflicting_mock_declarations_raises_an_error53,1571
+  def test_conflicting_mock_declarations_in_reverse_order_does_not_raise_errortest_conflicting_mock_declarations_in_reverse_order_does_not_raise_error65,1976
+  def test_preestablishing_existing_mock_is_oktest_preestablishing_existing_mock_is_ok75,2320
+  def test_quick_defs_can_use_demeter_mockingtest_quick_defs_can_use_demeter_mocking83,2583
+  def test_quick_defs_can_use_demeter_mocking_twotest_quick_defs_can_use_demeter_mocking_two93,2892
+  def test_errors_on_ill_formed_method_namestest_errors_on_ill_formed_method_names100,3121
+  def test_no_errors_on_well_formed_method_namestest_no_errors_on_well_formed_method_names109,3375
+  def test_readme_example_1test_readme_example_1118,3593
+  def test_readme_example_2test_readme_example_2128,3967
+  def test_readme_example_3test_readme_example_3134,4168
+
+test/test_deprecated_methods.rb,2237
+class TestFlexMock < Test::Unit::TestCaseTestFlexMock15,358
+  def s(&block)s19,464
+  def setupsetup23,514
+  def test_handletest_handle27,562
+  def test_handle_no_blocktest_handle_no_block34,706
+  def test_called_with_blocktest_called_with_block40,836
+  def test_return_valuetest_return_value47,1034
+  def test_handle_missing_methodtest_handle_missing_method52,1139
+  def test_ignore_missing_methodtest_ignore_missing_method60,1369
+  def test_good_countstest_good_counts66,1500
+  def test_bad_countstest_bad_counts74,1639
+  def test_undetermined_countstest_undetermined_counts85,1846
+  def test_zero_countstest_zero_counts94,1991
+  def test_file_io_with_usetest_file_io_with_use103,2160
+  def count_lines(stream)count_lines111,2364
+  def test_usetest_use119,2478
+  def test_failures_during_usetest_failures_during_use128,2625
+  def test_sequential_valuestest_sequential_values138,2844
+  def test_respond_to_returns_false_for_non_handled_methodstest_respond_to_returns_false_for_non_handled_methods147,3076
+  def test_respond_to_returns_true_for_explicit_methodstest_respond_to_returns_true_for_explicit_methods151,3211
+  def test_respond_to_returns_true_for_missing_methods_when_ignoring_missingtest_respond_to_returns_true_for_missing_methods_when_ignoring_missing156,3370
+  def test_respond_to_returns_true_for_missing_methods_when_ignoring_missing_using_shouldtest_respond_to_returns_true_for_missing_methods_when_ignoring_missing_using_should161,3551
+  def test_method_proc_raises_error_on_unknowntest_method_proc_raises_error_on_unknown166,3747
+  def test_method_returns_callable_proctest_method_returns_callable_proc172,3865
+  def test_method_returns_do_nothing_proc_for_missing_methodstest_method_returns_do_nothing_proc_for_missing_methods181,4121
+class TestDeprecatedOrderingMethods < Test::Unit::TestCaseTestDeprecatedOrderingMethods189,4348
+  def test_deprecated_ordering_methodstest_deprecated_ordering_methods193,4471
+class TestAnyInstance < Test::Unit::TestCaseTestAnyInstance205,4867
+  class DogDog209,4976
+    def barkbark210,4988
+  def test_any_instance_still_works_for_backwards_compatibilitytest_any_instance_still_works_for_backwards_compatibility215,5028
+
+test/test_examples_from_readme.rb,1206
+class TemperatureSamplerTemperatureSampler14,320
+  def initialize(sensor)initialize15,345
+  def average_tempaverage_temp19,398
+class TestTemperatureSampler < Test::Unit::TestCaseTestTemperatureSampler25,525
+  def test_tempurature_samplertest_tempurature_sampler28,607
+class TestExamplesFromReadme < Test::Unit::TestCaseTestExamplesFromReadme37,886
+  def test_simple_return_valuestest_simple_return_values40,968
+  def test_returning_an_undefined_valuetest_returning_an_undefined_value46,1108
+  def test_dbtest_db52,1246
+  def test_query_and_updatetest_query_and_update61,1476
+  def test_ordered_queriestest_ordered_queries70,1729
+  def test_ordered_queries_in_record_modetest_ordered_queries_in_record_mode88,2326
+  def test_build_xmltest_build_xml105,2858
+  def known_good_way_to_build_xml(rec)known_good_way_to_build_xml114,3113
+  def new_way_to_build_xml(rec)new_way_to_build_xml119,3183
+  def test_multiple_getstest_multiple_gets123,3271
+  def test_an_important_messagetest_an_important_message132,3516
+  class QuoteServiceQuoteService141,3746
+  class PortfolioPortfolio143,3773
+    def valuevalue144,3791
+  def test_portfolio_valuetest_portfolio_value149,3849
+
+test/test_extended_should_receive.rb,808
+module ExtendedShouldReceiveTestsExtendedShouldReceiveTests14,320
+  def test_accepts_expectation_hashtest_accepts_expectation_hash15,354
+  def test_accepts_list_of_methodstest_accepts_list_of_methods21,518
+  def test_contraints_apply_to_all_expectationstest_contraints_apply_to_all_expectations28,676
+  def test_count_contraints_apply_to_all_expectationstest_count_contraints_apply_to_all_expectations35,943
+  def test_multiple_should_receives_are_allowedtest_multiple_should_receives_are_allowed41,1134
+class TestExtendedShouldReceiveOnFullMocks < Test::Unit::TestCaseTestExtendedShouldReceiveOnFullMocks49,1351
+  def setupsetup53,1484
+class TestExtendedShouldReceiveOnPartialMockProxies < Test::Unit::TestCaseTestExtendedShouldReceiveOnPartialMockProxies60,1554
+  def setupsetup64,1696
+
+test/test_flexmodel.rb,528
+class DummyModelDummyModel5,48
+class ChildModel < DummyModelChildModel8,70
+class TestFlexModel < Test::Unit::TestCaseTestFlexModel12,176
+  def test_initial_conditionstest_initial_conditions15,249
+  def test_classifying_mock_modelstest_classifying_mock_models27,650
+  def test_mock_models_have_different_idstest_mock_models_have_different_ids37,897
+  def test_mock_models_can_have_quick_defstest_mock_models_can_have_quick_defs43,1048
+  def test_mock_models_can_have_blockstest_mock_models_can_have_blocks48,1188
+
+test/test_naming.rb,816
+class TestNaming < Test::Unit::TestCaseTestNaming14,320
+  def test_nametest_name17,390
+  def test_name_in_no_handler_found_errortest_name_in_no_handler_found_error22,473
+  def test_name_in_received_count_errortest_name_in_received_count_error31,689
+  def test_naming_with_usetest_naming_with_use40,909
+  def test_naming_with_multiple_mocks_in_usetest_naming_with_multiple_mocks_in_use46,1026
+  def test_inspect_returns_reasonable_nametest_inspect_returns_reasonable_name53,1214
+  def test_mock_can_override_inspecttest_mock_can_override_inspect60,1398
+  class DummyDummy67,1601
+    def inspectinspect68,1615
+  def test_partial_mocks_use_original_inspecttest_partial_mocks_use_original_inspect73,1668
+  def test_partial_mocks_can_override_inspecttest_partial_mocks_can_override_inspect79,1832
+
+test/test_new_instances.rb,2271
+class TestNewInstances < Test::Unit::TestCaseTestNewInstances14,320
+  class DogDog18,430
+    def barkbark19,442
+    def wagwag22,475
+    def self.makemake25,507
+  class CatCat30,550
+    def initialize(name, &block)initialize32,584
+  class ConnectionConnection38,690
+    def initialize(*args)initialize39,709
+    def send(args)send42,777
+    def post(args)post45,821
+  def test_new_instances_allows_stubbing_of_existing_methodstest_new_instances_allows_stubbing_of_existing_methods50,872
+  def test_new_instances_stubs_still_have_existing_methodstest_new_instances_stubs_still_have_existing_methods58,1093
+  def test_new_instances_will_pass_args_to_newtest_new_instances_will_pass_args_to_new66,1308
+  def test_new_gets_block_after_restubbingtest_new_gets_block_after_restubbing79,1714
+  def test_new_instances_stub_verification_happens_on_teardowntest_new_instances_stub_verification_happens_on_teardown92,2035
+  def test_new_instances_reports_error_on_non_classestest_new_instances_reports_error_on_non_classes102,2380
+  def test_does_not_by_default_stub_objects_created_with_allocatetest_does_not_by_default_stub_objects_created_with_allocate112,2659
+  def test_can_explicitly_stub_objects_created_with_allocatetest_can_explicitly_stub_objects_created_with_allocate120,2887
+  def test_can_stub_objects_created_with_arbitrary_class_methodstest_can_stub_objects_created_with_arbitrary_class_methods128,3124
+  def test_stubbing_arbitrary_class_methods_leaves_new_alonetest_stubbing_arbitrary_class_methods_leaves_new_alone135,3347
+  def test_stubbing_new_and_allocate_doesnt_double_stub_objects_on_newtest_stubbing_new_and_allocate_doesnt_double_stub_objects_on_new142,3562
+  def test_blocks_on_new_do_not_have_stubs_installedtest_blocks_on_new_do_not_have_stubs_installed155,4015
+  def test_new_instances_accept_chained_expectationstest_new_instances_accept_chained_expectations169,4353
+  def test_fancy_use_of_chained_should_receivedtest_fancy_use_of_chained_should_received177,4623
+  def test_writable_accessorstest_writable_accessors182,4778
+  def test_ordering_can_be_specifiedtest_ordering_can_be_specified188,4923
+  def test_ordering_can_be_specified_in_groupstest_ordering_can_be_specified_in_groups196,5117
+
+test/test_partial_mock.rb,4962
+class TestStubbing < Test::Unit::TestCaseTestStubbing14,320
+  class DogDog17,392
+    def barkbark18,404
+    def Dog.createcreate21,437
+  class DogPlus < DogDogPlus26,486
+    def should_receiveshould_receive27,508
+    def new_instancesnew_instances30,557
+    def by_defaultby_default33,602
+  def test_stub_command_add_behavior_to_arbitrary_objectstest_stub_command_add_behavior_to_arbitrary_objects38,658
+  def test_stub_command_can_configure_via_blocktest_stub_command_can_configure_via_block44,842
+  def test_stubbed_methods_can_take_blockstest_stubbed_methods_can_take_blocks52,1039
+  def test_multiple_stubs_on_the_same_object_reuse_the_same_partial_mocktest_multiple_stubs_on_the_same_object_reuse_the_same_partial_mock59,1264
+  def test_multiple_methods_can_be_stubbedtest_multiple_methods_can_be_stubbed64,1411
+  def test_original_behavior_can_be_restoredtest_original_behavior_can_be_restored72,1663
+  def test_original_missing_behavior_can_be_restoredtest_original_missing_behavior_can_be_restored82,1998
+  def test_multiple_stubs_on_single_method_can_be_restored_missing_methodtest_multiple_stubs_on_single_method_can_be_restored_missing_method91,2277
+  def test_original_behavior_is_restored_when_multiple_methods_are_mockedtest_original_behavior_is_restored_when_multiple_methods_are_mocked102,2686
+  def test_original_behavior_is_restored_on_class_objectstest_original_behavior_is_restored_on_class_objects111,3015
+  def test_original_behavior_is_restored_on_singleton_methodstest_original_behavior_is_restored_on_singleton_methods118,3262
+    def obj.hi() :hello endhi120,3345
+  def test_original_behavior_is_restored_on_singleton_methods_with_multiple_stubstest_original_behavior_is_restored_on_singleton_methods_with_multiple_stubs128,3541
+    def obj.hi(n) "hello#{n}" endhi130,3644
+  def test_original_behavior_is_restored_on_nonsingleton_methods_with_multiple_stubstest_original_behavior_is_restored_on_nonsingleton_methods_with_multiple_stubs140,3965
+  def test_stubbing_file_shouldnt_break_writingtest_stubbing_file_shouldnt_break_writing156,4459
+  def test_original_behavior_is_restored_even_when_errorstest_original_behavior_is_restored_even_when_errors172,4898
+    def m.flexmock_verify() endflexmock_verify180,5217
+  def test_not_calling_stubbed_method_is_an_errortest_not_calling_stubbed_method_is_an_error183,5256
+  def test_mock_is_verified_when_the_stub_is_verifiedtest_mock_is_verified_when_the_stub_is_verified192,5474
+  def test_stub_can_have_explicit_nametest_stub_can_have_explicit_name201,5731
+  def test_unamed_stub_will_use_default_naming_conventiontest_unamed_stub_will_use_default_naming_convention207,5910
+  def test_partials_can_be_defined_in_a_blocktest_partials_can_be_defined_in_a_block213,6106
+  def test_partials_defining_block_return_real_obj_not_proxytest_partials_defining_block_return_real_obj_not_proxy221,6293
+  def test_partial_mocks_always_return_domain_objecttest_partial_mocks_always_return_domain_object228,6487
+  def test_domain_objects_do_not_have_mock_methodstest_domain_objects_do_not_have_mock_methods239,6767
+  def test_partial_mocks_have_mock_methodstest_partial_mocks_have_mock_methods246,6959
+  def test_partial_mocks_do_not_have_mock_methods_after_teardowntest_partial_mocks_do_not_have_mock_methods_after_teardown254,7155
+  def test_partial_mocks_with_mock_method_singleton_colision_have_original_defs_restoredtest_partial_mocks_with_mock_method_singleton_colision_have_original_defs_restored263,7405
+    def dog.mock() :original endmock265,7512
+  class MockColisionMockColision271,7633
+    def mockmock272,7654
+  def test_partial_mocks_with_mock_method_non_singleton_colision_have_original_defs_restoredtest_partial_mocks_with_mock_method_non_singleton_colision_have_original_defs_restored277,7698
+  def test_safe_partial_mocks_do_not_support_mock_methodstest_safe_partial_mocks_do_not_support_mock_methods284,7902
+  def test_safe_partial_mocks_require_blocktest_safe_partial_mocks_require_block292,8130
+  def test_safe_partial_mocks_are_actually_mockedtest_safe_partial_mocks_are_actually_mocked297,8268
+  def test_should_receive_does_not_override_preexisting_deftest_should_receive_does_not_override_preexisting_def302,8438
+  def test_should_receive_does_override_should_receive_preexisting_deftest_should_receive_does_override_should_receive_preexisting_def308,8638
+  class LiarLiar313,8822
+    def respond_to?(method_name)respond_to?314,8835
+  def test_liar_actually_liestest_liar_actually_lies324,9004
+  def test_partial_mock_where_respond_to_is_true_yet_method_is_not_theretest_partial_mock_where_respond_to_is_true_yet_method_is_not_there330,9156
+  class ValueObjectValueObject341,9585
+    def initialize(val)initialize344,9627
+    def ==(other)==348,9677
+  def test_partial_mocks_in_the_presense_of_equal_definitiontest_partial_mocks_in_the_presense_of_equal_definition353,9734
+
+test/test_rails_view_stub.rb,1492
+module ViewTestsViewTests6,86
+  def test_view_mocks_as_stubtest_view_mocks_as_stub7,103
+  def test_fails_if_no_rendertest_fails_if_no_render12,197
+  def test_view_mocks_with_expectationtest_view_mocks_with_expectation19,331
+  def test_view_mocks_with_expectation_fails_with_different_templatetest_view_mocks_with_expectation_fails_with_different_template24,435
+  def test_view_mocks_with_expectation_and_multiple_templatestest_view_mocks_with_expectation_and_multiple_templates32,644
+  def pretend_to_be_rails_version(version)pretend_to_be_rails_version39,820
+class TestRailsViewStubForVersionsUpTo_1_2_4 < Test::Unit::TestCaseTestRailsViewStubForVersionsUpTo_1_2_445,1015
+  def setupsetup49,1133
+  def render(*names)render56,1362
+class TestRailsViewStubForVersionsAfter_1_2_4 < Test::Unit::TestCaseTestRailsViewStubForVersionsAfter_1_2_470,1640
+  def setupsetup74,1759
+  def render(*names)render82,2032
+class TestRailsViewStubForVersionsAfter_2_0_2 < Test::Unit::TestCaseTestRailsViewStubForVersionsAfter_2_0_297,2334
+  def setupsetup101,2453
+  def render(*names)render109,2728
+class FlexMockFlexMock123,2983
+  module MockContainerMockContainer124,2998
+    module RailsRails125,3021
+      module VERSIONVERSION126,3038
+class TestRailsVersion < Test::Unit::TestCaseTestRailsVersion133,3107
+  def test_rails_version_to_get_code_coveragetest_rails_version_to_get_code_coverage135,3182
+module ActionViewActionView142,3280
+  class BaseBase143,3298
+
+test/test_record_mode.rb,1339
+class TestRecordMode < Test::Unit::TestCaseTestRecordMode14,320
+  def test_recording_mode_workstest_recording_mode_works17,394
+  def test_arguments_are_passed_to_recording_mode_blocktest_arguments_are_passed_to_recording_mode_block25,568
+  def test_recording_mode_handles_multiple_returnstest_recording_mode_handles_multiple_returns36,832
+  def test_recording_mode_does_not_specify_ordertest_recording_mode_does_not_specify_order50,1242
+  def test_recording_mode_gets_block_args_tootest_recording_mode_gets_block_args_too61,1477
+  def test_recording_mode_should_validate_args_with_equalstest_recording_mode_should_validate_args_with_equals73,1747
+  def test_recording_mode_should_allow_arg_contraint_validationtest_recording_mode_should_allow_arg_contraint_validation84,1971
+  def test_recording_mode_should_handle_multiplicity_contraintstest_recording_mode_should_handle_multiplicity_contraints95,2200
+  def test_strict_record_mode_requires_exact_argument_matchestest_strict_record_mode_requires_exact_argument_matches107,2455
+  def test_strict_record_mode_requires_exact_orderingtest_strict_record_mode_requires_exact_ordering119,2723
+  def test_strict_record_mode_requires_oncetest_strict_record_mode_requires_once133,3014
+  def test_strict_record_mode_can_not_failtest_strict_record_mode_can_not_fail146,3276
+
+test/test_samples.rb,2164
+class TestSamples < Test::Unit::TestCaseTestSamples16,346
+  def test_file_iotest_file_io24,716
+  def count_lines(file)count_lines32,967
+class TestUndefined < Test::Unit::TestCaseTestUndefined42,1060
+  def test_undefined_valuestest_undefined_values45,1133
+class TestSimple < Test::Unit::TestCaseTestSimple54,1319
+  def test_simple_mocktest_simple_mock57,1389
+class TestDog < Test::Unit::TestCaseTestDog64,1524
+  def test_dog_wagstest_dog_wags67,1591
+class WooferWoofer73,1702
+class DogDog76,1720
+  def initializeinitialize77,1730
+  def barkbark80,1778
+  def wagwag83,1812
+class TestDogBarking < Test::Unit::TestCaseTestDogBarking88,1844
+  def setupsetup93,2006
+  def test_dogtest_dog98,2079
+class TestDogBarkingWithNewInstances < Test::Unit::TestCaseTestDogBarkingWithNewInstances104,2210
+  def setupsetup109,2374
+  def test_dogtest_dog113,2459
+class TestDefaults < Test::Unit::TestCaseTestDefaults119,2593
+  def setupsetup122,2665
+  def test_something_where_bark_must_be_called_oncetest_something_where_bark_must_be_called_once127,2792
+class TestDemeter < Test::Unit::TestCaseTestDemeter135,2994
+  def test_manual_mockingtest_manual_mocking137,3064
+  def test_demetertest_demeter150,3498
+class TestDb < Test::Unit::TestCaseTestDb160,3713
+  def test_dbtest_db163,3779
+class TestDb < Test::Unit::TestCaseTestDb174,3984
+  def test_query_and_updatetest_query_and_update177,4050
+  def test_ordered_queriestest_ordered_queries188,4327
+  def test_ordered_queries_in_record_modetest_ordered_queries_in_record_mode206,4867
+  def known_good_way_to_build_xml(builder)known_good_way_to_build_xml223,5342
+  def new_way_to_build_xml(builder)new_way_to_build_xml227,5409
+  def test_build_xmltest_build_xml231,5493
+class TestMoreSamples < Test::Unit::TestCaseTestMoreSamples242,5753
+  def test_multiple_getstest_multiple_gets245,5828
+  def test_an_important_messagetest_an_important_message254,6073
+  class QuoteServiceQuoteService263,6334
+  class PortfolioPortfolio266,6362
+    def initializeinitialize267,6380
+    def valuevalue270,6447
+  def test_portfolio_valuetest_portfolio_value275,6503
+
+test/test_setup.rb,180
+class FlexMockFlexMock7,91
+  module TestCaseTestCase8,106
+    def assertion_failed_errorassertion_failed_error9,124
+    def assert_failure(message=nil)assert_failure16,378
+
+test/test_should_ignore_missing.rb,1173
+class TestShouldIgnoreMissing < Test::Unit::TestCaseTestShouldIgnoreMissing14,320
+  def setupsetup17,403
+  def test_mocks_do_not_respond_to_undefined_methodstest_mocks_do_not_respond_to_undefined_methods21,451
+  def test_mocks_do_respond_to_defined_methodstest_mocks_do_respond_to_defined_methods25,555
+  def test_mocks_do_respond_to_any_method_when_ignoring_missingtest_mocks_do_respond_to_any_method_when_ignoring_missing30,695
+  def test_ignored_methods_return_undefinedtest_ignored_methods_return_undefined35,841
+  def test_undefined_mocking_with_argumentstest_undefined_mocking_with_arguments41,1015
+  def test_method_chains_with_undefined_are_self_preservingtest_method_chains_with_undefined_are_self_preserving46,1163
+  def test_method_proc_raises_error_on_unknowntest_method_proc_raises_error_on_unknown51,1328
+  def test_method_returns_callable_proctest_method_returns_callable_proc57,1452
+  def test_not_calling_method_proc_will_fail_count_constraintstest_not_calling_method_proc_will_fail_count_constraints64,1636
+  def test_method_returns_do_nothing_proc_for_missing_methodstest_method_returns_do_nothing_proc_for_missing_methods73,1898
+
+test/test_should_receive.rb,11020
+def mock_top_level_functionmock_top_level_function14,320
+module KernelKernel18,361
+  def mock_kernel_functionmock_kernel_function19,375
+class CatCat25,441
+  def purrpurr26,451
+  def meowmeow28,468
+class TestFlexMockShoulds < Test::Unit::TestCaseTestFlexMockShoulds32,490
+  def test_defaultstest_defaults43,995
+  def test_returns_with_valuetest_returns_with_value52,1163
+  def test_returns_with_multiple_valuestest_returns_with_multiple_values60,1330
+  def test_multiple_returnstest_multiple_returns71,1590
+  def test_returns_with_blocktest_returns_with_block82,1850
+  def test_block_example_from_readmetest_block_example_from_readme91,2053
+  def test_return_with_and_without_block_interleavedtest_return_with_and_without_block_interleaved101,2349
+  def test_and_returns_aliastest_and_returns_alias111,2629
+  def test_and_return_undefinedtest_and_return_undefined118,2766
+  def test_and_yield_will_continue_to_yield_the_same_valuetest_and_yield_will_continue_to_yield_the_same_value128,3115
+  def test_and_yield_with_multiple_values_yields_the_valuestest_and_yield_with_multiple_values_yields_the_values136,3361
+  def test_multiple_yields_are_done_sequentiallytest_multiple_yields_are_done_sequentially143,3571
+  def test_failure_if_no_block_giventest_failure_if_no_block_given152,3843
+  def test_failure_different_return_value_than_yield_returntest_failure_different_return_value_than_yield_return159,4026
+  def test_multiple_yieldstest_multiple_yields168,4312
+  def test_multiple_yields_will_yield_the_last_value_settest_multiple_yields_will_yield_the_last_value_set176,4550
+  def test_yielding_then_not_yielding_and_then_yielding_againtest_yielding_then_not_yielding_and_then_yielding_again187,4927
+  def test_yields_syntaxtest_yields_syntax198,5274
+  class MyError < RuntimeErrorMyError205,5419
+  def test_and_raises_with_exception_class_throws_exceptiontest_and_raises_with_exception_class_throws_exception208,5457
+  def test_and_raises_with_arguments_throws_exception_made_with_argstest_and_raises_with_arguments_throws_exception_made_with_args217,5666
+  def test_and_raises_with_a_specific_exception_throws_the_exceptiontest_and_raises_with_a_specific_exception_throws_the_exception227,5947
+  def test_raises_is_an_alias_for_and_raisetest_raises_is_an_alias_for_and_raise238,6217
+  def test_multiple_and_raise_clauses_will_be_done_sequentiallytest_multiple_and_raise_clauses_will_be_done_sequentially247,6422
+  def test_and_throw_will_throw_a_symboltest_and_throw_will_throw_a_symbol259,6820
+  def test_and_throw_with_expression_will_throwtest_and_throw_with_expression_will_throw270,7063
+  def test_throws_is_an_alias_for_and_throwtest_throws_is_an_alias_for_and_throw281,7345
+  def test_multiple_throws_will_be_done_sequentiallytest_multiple_throws_will_be_done_sequentially292,7620
+  def test_multiple_expectationstest_multiple_expectations304,7950
+  def test_with_no_args_with_no_argstest_with_no_args_with_no_args314,8181
+  def test_with_no_args_but_with_argstest_with_no_args_but_with_args321,8309
+  def test_with_any_argstest_with_any_args330,8508
+  def test_with_any_single_arg_matchingtest_with_any_single_arg_matching340,8686
+  def test_with_any_single_arg_nonmatchingtest_with_any_single_arg_nonmatching348,8879
+  def test_with_equal_arg_matchingtest_with_equal_arg_matching358,9114
+  def test_with_ducktype_arg_matchingtest_with_ducktype_arg_matching365,9277
+  def test_with_ducktype_arg_matching_no_matchtest_with_ducktype_arg_matching_no_match372,9456
+  def test_with_hash_matchingtest_with_hash_matching381,9680
+  def test_with_hash_non_matchingtest_with_hash_non_matching388,9868
+  def test_with_equal_arg_nonmatchingtest_with_equal_arg_nonmatching397,10088
+  def test_with_arbitrary_arg_matchingtest_with_arbitrary_arg_matching406,10325
+  def test_args_matching_with_regextest_args_matching_with_regex421,10745
+  def test_arg_matching_with_regex_matching_non_stringtest_arg_matching_with_regex_matching_non_string433,11066
+  def test_arg_matching_with_classtest_arg_matching_with_class440,11243
+  def test_arg_matching_with_no_matchtest_arg_matching_with_no_match451,11527
+  def test_arg_matching_with_string_doesnt_over_matchtest_arg_matching_with_string_doesnt_over_match460,11740
+  def test_block_arg_given_to_no_argstest_block_arg_given_to_no_args469,11959
+  def test_block_arg_given_to_matching_proctest_block_arg_given_to_matching_proc478,12163
+  def test_arg_matching_precedence_when_best_firsttest_arg_matching_precedence_when_best_first489,12448
+  def test_arg_matching_precedence_when_best_last_but_still_matches_firsttest_arg_matching_precedence_when_best_last_but_still_matches_first497,12657
+  def test_never_and_never_calledtest_never_and_never_called505,12889
+  def test_never_and_called_oncetest_never_and_called_once511,13004
+  def test_once_called_oncetest_once_called_once520,13196
+  def test_once_but_never_calledtest_once_but_never_called527,13330
+  def test_once_but_called_twicetest_once_but_called_twice535,13517
+  def test_twice_and_called_twicetest_twice_and_called_twice545,13736
+  def test_zero_or_more_called_zerotest_zero_or_more_called_zero553,13891
+  def test_zero_or_more_called_oncetest_zero_or_more_called_once559,14013
+  def test_zero_or_more_called_100test_zero_or_more_called_100566,14146
+  def test_timestest_times573,14292
+  def test_at_least_called_oncetest_at_least_called_once580,14433
+  def test_at_least_but_never_calledtest_at_least_but_never_called587,14580
+  def test_at_least_once_but_called_twicetest_at_least_once_but_called_twice595,14783
+  def test_at_least_and_exacttest_at_least_and_exact603,14954
+  def test_at_most_but_never_calledtest_at_most_but_never_called613,15184
+  def test_at_most_called_oncetest_at_most_called_once619,15320
+  def test_at_most_called_twicetest_at_most_called_twice626,15465
+  def test_at_most_and_at_least_called_nevertest_at_most_and_at_least_called_never636,15693
+  def test_at_most_and_at_least_called_oncetest_at_most_and_at_least_called_once644,15918
+  def test_at_most_and_at_least_called_twicetest_at_most_and_at_least_called_twice651,16091
+  def test_at_most_and_at_least_called_three_timestest_at_most_and_at_least_called_three_times659,16279
+  def test_call_counts_only_apply_to_matching_argstest_call_counts_only_apply_to_matching_args670,16557
+  def test_call_counts_only_apply_to_matching_args_with_mismatchtest_call_counts_only_apply_to_matching_args_with_mismatch682,16835
+  def test_ordered_calls_in_order_will_passtest_ordered_calls_in_order_will_pass698,17268
+  def test_ordered_calls_out_of_order_will_failtest_ordered_calls_out_of_order_will_fail708,17450
+  def test_order_calls_with_different_arg_lists_and_in_order_will_passtest_order_calls_with_different_arg_lists_and_in_order_will_pass720,17711
+  def test_order_calls_with_different_arg_lists_and_out_of_order_will_failtest_order_calls_with_different_arg_lists_and_out_of_order_will_fail730,17958
+  def test_unordered_calls_do_not_effect_ordered_testingtest_unordered_calls_do_not_effect_ordered_testing742,18284
+  def test_ordered_with_multiple_calls_will_passtest_ordered_with_multiple_calls_will_pass756,18548
+  def test_grouped_ordering_with_numberstest_grouped_ordering_with_numbers768,18757
+  def test_grouped_ordering_with_symbolstest_grouped_ordering_with_symbols783,19072
+  def test_explicit_ordering_mixed_with_implicit_ordering_should_not_overlaptest_explicit_ordering_mixed_with_implicit_ordering_should_not_overlap798,19428
+  def test_explicit_ordering_with_explicit_misorderstest_explicit_ordering_with_explicit_misorders808,19801
+  def test_ordering_with_explicit_no_args_matches_correctlytest_ordering_with_explicit_no_args_matches_correctly824,20329
+  def test_ordering_with_any_arg_matching_correctly_matchestest_ordering_with_any_arg_matching_correctly_matches836,20702
+  def test_ordering_between_mocks_is_not_normally_definedtest_ordering_between_mocks_is_not_normally_defined847,21010
+  def test_ordering_between_mocks_is_honored_for_global_orderingtest_ordering_between_mocks_is_honored_for_global_ordering859,21264
+  def test_expectation_formatingtest_expectation_formating871,21573
+  def test_multi_expectation_formattingtest_multi_expectation_formatting880,21801
+  def test_explicit_ordering_with_limits_allow_multiple_return_valuestest_explicit_ordering_with_limits_allow_multiple_return_values886,21964
+  def test_global_methods_can_be_mockedtest_global_methods_can_be_mocked905,22675
+  def test_kernel_methods_can_be_mockedtest_kernel_methods_can_be_mocked911,22859
+  def test_undefing_kernel_methods_dont_effect_other_mockstest_undefing_kernel_methods_dont_effect_other_mocks917,23037
+  def test_expectations_can_by_marked_as_defaulttest_expectations_can_by_marked_as_default925,23305
+  def test_default_expectations_are_search_in_the_proper_ordertest_default_expectations_are_search_in_the_proper_order931,23467
+  def test_expectations_with_count_constraints_can_by_marked_as_defaulttest_expectations_with_count_constraints_can_by_marked_as_default939,23770
+  def test_default_expectations_are_overridden_by_later_expectationstest_default_expectations_are_overridden_by_later_expectations947,24006
+  def test_default_expectations_can_be_changed_by_later_expectationstest_default_expectations_can_be_changed_by_later_expectations955,24234
+  def test_ordered_default_expectations_can_be_specifiedtest_ordered_default_expectations_can_be_specified966,24596
+  def test_ordered_default_expectations_can_be_overriddentest_ordered_default_expectations_can_be_overridden974,24837
+  def test_by_default_works_at_mock_leveltest_by_default_works_at_mock_level986,25108
+  def test_by_default_at_mock_level_does_nothing_with_no_expectationstest_by_default_at_mock_level_does_nothing_with_no_expectations997,25383
+  def test_partial_mocks_can_have_default_expectationstest_partial_mocks_can_have_default_expectations1003,25528
+  def test_partial_mocks_can_have_default_expectations_overriddentest_partial_mocks_can_have_default_expectations_overridden1009,25709
+  def test_wicked_and_evil_tricks_with_by_default_are_thwartedtest_wicked_and_evil_tricks_with_by_default_are_thwarted1016,25957
+  def test_mocks_can_handle_multi_parameter_respond_tostest_mocks_can_handle_multi_parameter_respond_tos1028,26362
+  def test_can_mock_operatorstest_can_mock_operators1039,26709
+  def assert_operator(op, &block)assert_operator1069,27773
+class TestFlexMockShouldsWithInclude < Test::Unit::TestCaseTestFlexMockShouldsWithInclude1077,27927
+  def test_include_enables_unqualified_arg_type_referencestest_include_enables_unqualified_arg_type_references1079,28021
+class TestFlexMockArgTypesDontLeak < Test::Unit::TestCaseTestFlexMockArgTypesDontLeak1087,28185
+  def test_unqualified_arg_type_references_are_undefined_by_defaulttest_unqualified_arg_type_references_are_undefined_by_default1088,28243
+
+test/test_tu_integration.rb,1570
+class TestTuIntegrationFlexMockMethod < Test::Unit::TestCaseTestTuIntegrationFlexMockMethod14,320
+  def test_can_construct_flexmocktest_can_construct_flexmock17,411
+  def test_can_construct_flexmock_with_blocktest_can_construct_flexmock_with_block23,558
+class TestTuIntegrationMockVerificationInTeardown < Test::Unit::TestCaseTestTuIntegrationMockVerificationInTeardown31,734
+  def teardownteardown34,837
+  def test_mock_verification_occurs_during_teardowntest_mock_verification_occurs_during_teardown40,923
+class TestTuIntegrationMockVerificationWithoutSetup < Test::Unit::TestCaseTestTuIntegrationMockVerificationWithoutSetup45,1041
+  def teardownteardown48,1146
+  def test_mock_verification_occurs_during_teardowntest_mock_verification_occurs_during_teardown54,1232
+class TestTuIntegrationMockVerificationForgetfulSetup < Test::Unit::TestCaseTestTuIntegrationMockVerificationForgetfulSetup59,1350
+  def teardownteardown62,1457
+  def test_mock_verification_occurs_during_teardowntest_mock_verification_occurs_during_teardown68,1543
+class TestTuIntegrationSetupOverridenAndNoMocksOk < Test::Unit::TestCaseTestTuIntegrationSetupOverridenAndNoMocksOk73,1661
+  def test_mock_verification_occurs_during_teardowntest_mock_verification_occurs_during_teardown76,1764
+class TestTuIntegrationFailurePreventsVerification < Test::Unit::TestCaseTestTuIntegrationFailurePreventsVerification80,1827
+  def test_mock_verification_occurs_during_teardowntest_mock_verification_occurs_during_teardown83,1931
+  def simulate_failuresimulate_failure90,2065
+
+test/test_undefined.rb,873
+class UndefinedTest < Test::Unit::TestCaseUndefinedTest14,320
+  def test_undefined_method_calls_return_undefinedtest_undefined_method_calls_return_undefined15,363
+  def test_equalstest_equals19,481
+  def test_math_operatorstest_math_operators24,579
+  def test_math_operators_reversedtest_math_operators_reversed32,788
+  def test_comparisonstest_comparisons40,1006
+  def test_comparisons_reversedtest_comparisons_reversed48,1215
+  def test_base_level_methodstest_base_level_methods56,1433
+  def test_cant_create_a_new_undefinedtest_cant_create_a_new_undefined60,1520
+  def test_cant_clone_undefinedtest_cant_clone_undefined64,1630
+  def test_string_representationstest_string_representations69,1764
+  def test_undefined_is_not_niltest_undefined_is_not_nil74,1902
+  def assert_undefined(obj)assert_undefined80,1980
+  def undefinedundefined84,2043
+
+test/test_unit_integration/test_auto_test_unit.rb,263
+class TestFlexmockTestUnit < Test::Unit::TestCaseTestFlexmockTestUnit17,374
+  def teardownteardown18,424
+  def test_can_create_mockstest_can_create_mocks23,483
+  def test_should_fail__mocks_are_auto_verifiedtest_should_fail__mocks_are_auto_verified30,626

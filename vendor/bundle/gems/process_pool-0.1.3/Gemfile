@@ -1,0 +1,9 @@
+disable_system_gems
+
+gem 'json'
+gem 'jeweler'
+
+only :test do
+  gem 'shoulda'
+  gem 'mocha'
+end

@@ -1,4 +1,4 @@
-require 'spec/platforms.rb'
+require "#{File.dirname(__FILE__)}/spec/platforms.rb"
 
 source "http://rubygems.org"
 gemspec
