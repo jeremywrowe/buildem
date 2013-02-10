@@ -3,8 +3,9 @@ Build'em quick, Build'em right
 
 Build'em is a small little script parser that is intended for large build systems.
 
-[![Build Status](https://secure.travis-ci.org/jeremywrowe/buildem.png)](http://travis-ci.org/jeremywrowe/buildem)
-
+[![Code Climate](https://codeclimate.com/github/jeremywrowe/buildem.png)](https://codeclimate.com/github/jeremywrowe/buildem) 
+[![Dependency Status](https://gemnasium.com/jeremywrowe/buildem.png)](https://gemnasium.com/jeremywrowe/buildem)
+[![Build Status](https://secure.travis-ci.org/jeremywrowe/buildem.png)](http://travis-ci.org/jeremywrowe/buildem) 
 
 Features:
 ---------
